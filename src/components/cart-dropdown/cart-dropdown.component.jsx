@@ -13,6 +13,7 @@ import {
 
 const CartDropdown = () => {
   const cartItems = useSelector(selectCartItems);
+  console.log("🚀 ~ CartDropdown ~ cartItems:", cartItems)
   const navigate = useNavigate();
 
   const goToCheckoutHandler = () => {
