@@ -28,13 +28,14 @@ const middleWares = [process.env.NODE_ENV === 'development' && logger].filter(
 
 export const store = configureStore({
   reducer: rootReducer,
-  // middleware: middleWares
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(middleWares)
 })
 
-createStore(
-  persistedReducer,
-  undefined,
-  composedEnhancers
-);
+// createStore(
+//   persistedReducer,
+//   undefined,
+//   composedEnhancers
+// );
 
 // export const persistor = persistStore(store);
